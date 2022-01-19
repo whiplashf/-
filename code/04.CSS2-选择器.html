@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS2</title>
+    <style>
+        /* 后代选择器 */
+        ol li {
+            color: pink;
+        }
+
+        ol li a {
+            color: rgb(0, 247, 255);
+            width: 300px;
+            display: block;
+            background-color: rgb(23, 19, 223);
+        }
+
+        .nav a {
+            color: brown;
+        }
+
+        /* 子元素选择器 */
+        div>a {
+            color: chartreuse;
+        }
+
+        /* 并集选择器 */
+        span,
+        p,
+        .nav li {
+            color: crimson;
+        }
+
+        /* 伪类选择器 */
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* a:visited {
+            color: orange;
+        } */
+
+        a:hover {
+            color: green;
+        }
+
+        a:active {
+            /* 鼠标按住的时候 */
+            color: hotpink
+        }
+
+        /* focus伪类选择器 */
+        input:focus {
+            background-color: pink;
+            color: lawngreen;
+            width: 200px;
+            height: 200px;
+        }
+
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: rgb(220, 221, 212);
+
+            /*设置背景图片。默认平铺*/
+            background-image: url(images/logo.png);
+            /*取消平铺*/
+            background-repeat: no-repeat;
+            /*沿着x轴平铺*/
+            /*background-repeat: repeat-x;*/
+
+            background-position: bottom center;
+
+
+            /*设置inline后宽和高会失效*/
+            display: inline;
+            /*行内块元素，仍然保留宽高*/
+            display: inline-block;
+        }
+
+        /*行内元素设置宽高无效*/
+        span {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>我是 ol的孩子</li>
+        <li>我是 ol的孩子</li>
+        <li>我是 ol的孩子</li>
+        <li><a href="#">我是 ol的孙子</a></li>
+
+    </ol>
+
+    <ol class='nav'>
+        <li>我是 ol的孩子</li>
+        <li>我是 ol的孩子</li>
+        <li>我是 ol的孩子</li>
+        <li><a href="#">我是 ol的孙子</a></li>
+
+    </ol>
+
+    <ul>
+        <li>我是 ul的孩子</li>
+        <li>我是 ul的孩子</li>
+        <li>我是 ul的孩子</li>
+    </ul>
+
+    <div>
+        <a href="#">儿子1</a>
+        <a href="#">儿子2</a>
+        <p><a href="#">孙子1</a></p>
+        <p>孙子2</p>
+    </div>
+
+    <span>这是一个span</span>
+    <p>这是一个p</p>
+    <a href="#">伪类选择器测试链接</a>
+
+    <form action="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </form>
+
+    <!--p里不允许放div-->
+    <p>
+    <div>检查一下 这里有问题</div>
+    </p>
+
+    <span>佳沐老师</span> <strong>怎么穿着品如的衣服</strong>
+    <span>佳沐老师</span> <strong>怎么穿着品如的衣服</strong>
+    <div>使用inline后会变成一行吗？</div>
+    <div>使用inline后会变成一行吗？</div>
+
+
+</body>
+
+</html>

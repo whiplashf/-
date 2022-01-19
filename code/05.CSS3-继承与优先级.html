@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /*令子元素的行高是 当前元素文字大小 的1.5倍*/
+            font: 24px/1.5 Microsoft YaHei;
+            color: tomato;
+
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        a {
+            /*a和行高在检查元素的时候总有一些误差 因为它是行内元素吗？*/
+            font-size: 15px;
+        }
+
+        /*id选择器优先级比元素原则器高*/
+        #big {
+            font-size: 50px;
+        }
+
+        /*复合选择器权重测试*/
+        /*0001 + 0001 = 0002*/
+        ol li {
+            color: yellow;
+        }
+
+        /*0001*/
+        li {
+            color: yellowgreen;
+        }
+
+        /*0010 + 0001 = 0011*/
+        .nav li {
+            color: brown;
+        }
+
+        /*要改变第一个li的颜色，需要考虑权重。直接用.pink行不通*/
+        .nav .pink {
+            color: pink;
+        }
+
+        /*li.pink 也可行，但中间不要有空格*/
+        /*li.pink {
+            color: pink;
+        }*/
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            字体颜色继承性测试文本
+        </p>
+        <a id="big" href="#">
+            最初的梦想 紧握在手上
+        </a>
+        <ul>
+            <li>没有指定大小的标签继承div</li>
+        </ul>
+    </div>
+
+    <!--复合选择器权重测试-->
+    <ol class="nav">
+        <li class="pink">七巧板</li>
+        <li>七巧板</li>
+        <li>七巧板</li>
+    </ol>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var n1 = 1.0001
+        var n2 = 2.0002
+        add(n1, n2)
+
+
+        function add(n1, n2) {
+            ns1 = n1.toString();
+            ns2 = n2.toString();
+
+            num1 = ns1.replace('.', '')
+            num2 = ns2.replace('.', '')
+
+            if (ns1.indexOf('.') != -1) {
+                a = ns1.split('.')[1].length
+            } else {
+                a = 0
+            }
+
+            if (ns2.indexOf('.') != -1) {
+                b = ns2.split('.')[1].length
+            } else {
+                b = 0
+            }
+
+            console.log(a)
+            console.log(b)
+
+            larger = (a > b) ? a : b
+            smaller = (a < b) ? a : b
+            zl = larger - smaller
+
+            if (a == larger) {
+                for (var i = 0; i < zl; i++) {
+                    num2 += '0'
+                }
+            } else {
+                for (var i = 0; i < zl; i++) {
+                    num1 += '0'
+                }
+
+            }
+
+            console.log(num1)
+            console.log(num2)
+            var sum = parseInt(num1) + parseInt(num2)
+            res = sum / Math.pow(10, larger)
+            console.log(res)
+
+
+        }
+
+
+
+    </script>
+    <!--<script>
+        //   开局弹出
+        alert('沙漠骆驼')
+    </script>-->
+    <!--<script src='js.js'></script>-->
+    <script>
+        function f() {
+            alert('liupi，我儿豁')
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="唐伯虎" onclick="alert('秋香姐')"> <br>
+    <input onclick="f()" type="button" value='点我试试？'>
+
+</body>
+
+</html>

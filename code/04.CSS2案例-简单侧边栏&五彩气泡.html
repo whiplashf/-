@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单侧边栏</title>
+    <style>
+        a {
+            display: block;
+            width: 200px;
+            height: 40px;
+            color: rgb(255, 255, 255);
+            background-color: #a2a0a0;
+            text-decoration: none;
+            /*糊弄的方法：*/
+            /*text-indent: 2em;*/
+            /*实际的做法 记住要修改width保证总长度不变*/
+            padding-left: 30px;
+            /*行高=盒子高度，使文字垂直居中*/
+            line-height: 40px;
+        }
+
+        a:hover {
+            background-color: #ff6700;
+        }
+
+        .nva a {
+            display: inline-block;
+            height: 58px;
+            width: 120px;
+            text-decoration: none;
+            background-repeat: no-repeat;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            padding: 0;
+        }
+
+        .nav1 {
+            background-image: url(images/Bubble-blue.jpg);
+        }
+
+        .nav2 {
+            background-image: url(images/Bubble-purple.png);
+        }
+
+        .nav3 {
+            background-image: url(images/Bubble-green.png);
+        }
+
+        .nav4 {
+            background-image: url(images/Bubble-blue2.png);
+        }
+
+        .nav1:hover {
+            background-image: url(images/Bubble-green.png);
+        }
+
+        .nav2:hover {
+            background-image: url(images/Bubble-red.png);
+        }
+
+        .nav3:hover {
+            background-image: url(images/Bubble-blue.jpg);
+        }
+
+        .nav4:hover {
+            background-image: url(images/Bubble-purple.png);
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#">手机 电话卡</a>
+    <a href="#">电视 盒子</a>
+    <a href="#">笔记本 平板</a>
+    <a href="#">出行 穿戴</a>
+    <a href="#">手机 电话卡</a>
+    <a href="#">手机 电话卡</a>
+    <a href="#">手机 电话卡</a>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+
+    <div class="nva">
+        <a href="#" class="nav1">五彩气泡</a>
+        <a href="#" class="nav2">五彩气泡</a>
+        <a href="#" class="nav3">五彩气泡</a>
+        <a href="#" class="nav4">五彩气泡</a>
+    </div>
+
+</body>
+
+</html>

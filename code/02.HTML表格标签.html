@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;02.HTML表格标签&gt;</title>
+</head>
+
+<body>
+    <!-- 基本表格。红色属性代表不提倡这样写。 -->
+    <span>
+        <table align='left' border='1' cellpadding='20' cellspacing='0' width='500' height='250'>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>刘德华</td>
+                    <td>男</td>
+                    <td>56</td>
+                    <td rowspan="4"> 列合并</td>
+                </tr>
+                <tr>
+                    <td>吴彦祖</td>
+                    <td>男</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>郭雪飞</td>
+                    <td>男</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td colspan='3'>合并</td>
+                </tr>
+            </tbody>
+        </table>
+    </span>
+
+    <!-- 列表 -->
+    <table align="left">
+        <tr>
+            <td>
+                <h4>【无序列表】你最喜欢的食物？</h4>
+                <ul>
+                    <li>臭豆腐</li>
+                    <li>榴莲</li>
+                    <li>鲱鱼罐头</li>
+                </ul>
+
+                <h4>【有序列表】粉丝排行榜</h4>
+                <ol>
+                    <li>刘德华</li>
+                    <li>马德华</li>
+                    <li>郭德纲</li>
+                </ol>
+
+                <h4>【自定义列表】</h4>
+                <dl>
+                    <dt>关注我们</dt>
+                    <dd>账户1</dd>
+                    <dd>账户2</dd>
+                    <dd>账户3</dd>
+                </dl>
+            </td>
+        </tr>
+    </table>
+
+    <!-- 表单 -->
+    <h4>你是谁？</h4><br>
+    <form action="demo.php" method="get" name="name1">
+        <table align="center" cellspacing='20'>
+            <tr>
+                <td>用户名：</td>
+                <td> <input type="text" name="username" placeholder="在此处输入" maxlength="6" id="usn"> </td>
+            </tr>
+
+            <tr>
+                <td>密码 ：</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+
+            <!-- radio 单选按钮 必须有相同的name，才可以实现单选。否则属于是多选 -->
+            <tr>
+                <td>性别：</td>
+                <td> <label for="nan">男</label> <input type="radio" name="sex" value="男" checked id="nan"> <label
+                        for="nv">女</label> <input type="radio" name='sex' value="女" id="nv"> </td>
+            </tr>
+
+            <!-- checkbox 复选按钮 相同name也可以复选 -->
+            <tr>
+                <td>爱好：</td>
+                <td>吃饭<input type="checkbox" name="hobby" value="吃饭"> 睡觉<input type="checkbox" name="hobby"> 打 
+                    篮球<input type="checkbox" name="hobby"> </td>
+            </tr>
+
+            <!-- reset 恢复表单元素默认状态 -->
+            <tr><td></td> <td> <input type="reset" value="重新填写"> </td></tr>
+            <!-- button 普通按钮 配合JS使用 -->
+            <tr><td></td> <td> <input type="button" value="获取短信验证码"> </td></tr>
+            <!-- file 上传文件 -->
+            <tr><td> 上传头像：</td> <td><input type="file"> </td></tr>
+            <!-- label 可以用于跳转到一个表单元素 -->
+            <tr><td><label for="usn"> &nbsp;&nbsp;&nbsp;跳转到用户名</label> </td></tr>
+
+            <!-- select 下拉菜单 双标签 -->
+            <tr>
+            <td>籍贯：</td>
+            <td>
+            <select>
+                <option>山东</option>
+                <option selected>--请选择籍贯--</option>
+                <option>重庆</option>
+                <option>新疆</option>
+            </select> 
+            </td>
+            </tr>
+
+            <!-- textarea 每行30个字，可以显示10行 实际开发不会用 用CSS -->
+            <tr>
+            <td>今日反馈：</td>
+            <td><textarea name="review" id="" cols="30" rows="3">blablablaaa</textarea> 
+            </td></tr>
+
+            <!-- submit 把表单域的值提交给后端服务器（按钮后的输入也会被提交） -->
+            <tr>
+                <td> <input type="submit" value="千万别点"> </td>
+                <td><a href="#">免责声明</a></td>
+            </tr>
+
+            <tr><td><input type="checkbox" value="0" name='agree'>我已同意免责声明</td></tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

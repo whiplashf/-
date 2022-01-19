@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        .c2 {
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            /*三种常用框线 solid dashed虚线 dotted */
+            border: 10px solid pink;
+            /*单独设置上边框 合理利用层叠性*/
+            border-top: 15px dashed orangered;
+            /*上下左右都是15px的内间距*/
+            padding: 15px;
+        }
+
+        table {
+            width: 500px;
+            height: 250px;
+        }
+
+        /*设置th后，剩下的行会平均分剩下的空间*/
+        th {
+            height: 80px;
+        }
+
+        /*table设置最外面的边框，td th设置内边框*/
+        table,
+        td,
+        th {
+            border: 1px solid deepskyblue;
+            /*合并相邻的边框*/
+            border-collapse: collapse;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /*没有指定width属性就不会被撑开 宽度1551不变*/
+        h1 {
+            /*width: 100%;*/
+            height: 200px;
+            background-color: deepskyblue;
+            padding: 30px;
+        }
+
+        .c1 {
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+        }
+
+        .c1 p {
+            /*加了width就会突破div 具体原理还不清楚*/
+            /*height: 100%;*/
+            /*width: 100%;*/
+            padding: 40px;
+            background-color: red;
+        }
+
+        .c3 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*块元素水平居中*/
+            margin: 20px auto;
+            /*行内块元素水平居中*/
+            text-align: center;
+        }
+
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 50px;
+            margin-left: 50px;
+
+            /*垂直外边距塌陷的解决方法：*/
+            /*border-top: 1px red solid;*/
+            /*padding: 1px;*/
+            overflow: hidden;
+
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*只写这个会导致垂直外边距塌陷*/
+            margin-top: 100px;
+            margin-left: 100px;
+            /*text-align: center;*/
+        }
+
+        /*清除网页默认的内外边距*/
+        /** {
+            padding: 0;
+            margin: 0;
+        }*/
+
+        span {
+            /*行内元素设置上下外边距不起效果*/
+            margin: 20px;
+            /*padding: 20px;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c2">检查一下盒子的实际大小是多少呢？
+        web端布局：先讲解HTML5常用标签，接着讲解CSS3常见样式，主要学习盒子模型，浮动，定位还有高级布局技巧，增加的H5C3新特性，新语法，最后讲解PC端品优购项目
+    </div>
+    <table align=center cellspacing=0>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>刘德华</td>
+                <td>男</td>
+                <td>56</td>
+                <td><a href="#">贴吧</a>
+                    <a href="#">百度百科</a>
+                </td>
+            </tr>
+            <tr>
+                <td>吴彦祖</td>
+                <td>男</td>
+                <td>36</td>
+                <td><a href="#">贴吧</a>
+                    <a href="#">百度百科</a>
+                </td>
+            </tr>
+            <tr>
+                <td>郭雪飞</td>
+                <td>男</td>
+                <td>18</td>
+                <td><a href="#">贴吧</a>
+                    <a href="#">百度百科</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>没撑开的盒子</h1>
+
+    <div class="c1">
+        <p></p>
+    </div>
+
+    <div class="c3">
+        <span>行内块元素</span>
+    </div>
+
+    <div class="father">
+        <div class="son">垂直外边距塌陷</div>
+    </div>
+
+    <div><span>
+            行内元素margin上下边距不起作用
+        </span></div>
+</body>
+
+</html>
